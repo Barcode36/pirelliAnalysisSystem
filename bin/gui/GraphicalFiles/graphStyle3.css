@@ -1,0 +1,18 @@
+.chart-title {
+  -fx-text-fill: transparent;
+  -fx-font-size: 20;
+  -fx-font-weight:bold;
+  -fx-wrap-text : true;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+ 
+
+
+
+
+
+
+

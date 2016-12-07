@@ -1,0 +1,57 @@
+.chart {
+    -fx-padding: 10px;
+
+}
+.chart-content {
+    -fx-padding: 30px;    
+}
+ 
+.chart-title {
+  -fx-text-fill: gold;
+  -fx-font-size: 20;
+  -fx-font-weight:bold;
+  -fx-wrap-text : true;
+}
+ 
+.axis-label {
+  -fx-text-fill: white;
+  -fx-font-size: 15;
+  -fx-font-weight:bold;
+}
+
+
+.chart-legend {
+   
+   -fx-padding: 5px;
+   -fx-border-width:5;
+-fx-border-style:solid;
+-fx-border-color:transparent;
+   
+}
+
+
+
+.chart-legend-item{
+    -fx-pref-width:150;
+    
+}
+
+.chart-plot-background {
+    -fx-background-color: white;
+}
+ 
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: black;
+}
+
+.axis {
+   
+    -fx-tick-label-fill: white;
+    
+}
+
+
+

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" fx:id="theRoot" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" onKeyReleased="#changeMetersToCutKey" pickOnBounds="true" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color:gray;&#10;&#10; -fx-size: 35;&#10;    -fx-border-width: 0 0 1 0;&#10;    -fx-border-color: &#10;        transparent&#10;        transparent&#10;        derive(-fx-base, 80%) &#10;        transparent;&#10;    -fx-border-insets: 0 10 1 0;" visible="true" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.ControllerTableAndGraph">
+  <center>
+    <TabPane fx:id="tabPanel" prefHeight="-1.0" prefWidth="200.0" style="-fx-background-color:gray;" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab fx:id="tabTableView" text="Table View">
+          <content>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+              <children>
+                <TableView id="tablePerformance" fx:id="tablePerformanceQuadruplex" prefHeight="-1.0" prefWidth="-1.0" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" tableMenuButtonVisible="false" />
+                <TableView fx:id="tablePerformanceDuplex" prefHeight="200.0" prefWidth="200.0" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" />
+                <TableView fx:id="tablePerformanceInnerLiner" prefHeight="200.0" prefWidth="200.0" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" />
+              </children>
+            </StackPane>
+          </content>
+        </Tab>
+        <Tab fx:id="tabGraphView" text="Chart View">
+          <content>
+            <VBox fx:id="vBoxGraphView" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%,silver, gray 50%, black 100%);">
+              <children>
+                <HBox id="HBoxMeasureFilter" fx:id="hBoxMeasureFilter" prefHeight="-1.0" prefWidth="-1.0">
+                  <children>
+                    <Label text="Measure:" textFill="#ff3d00">
+                      <font>
+                        <Font name="Arial monospaced for SAP Bold" size="15.0" fx:id="x3" />
+                      </font>
+                      <HBox.margin>
+                        <Insets left="20.0" right="30.0" />
+                      </HBox.margin>
+                    </Label>
+                    <ComboBox fx:id="choiceBoxRecipe" prefWidth="100.0" style="-fx-font-size:15;">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                    <Label fx:id="lblPI" text="P.I.:" visible="false">
+                      <font>
+                        <Font name="Arial monospaced for SAP Bold" size="13.0" />
+                      </font>
+                      <textFill>
+                        <Color blue="0.000" green="0.720" red="1.000" fx:id="x1" />
+                      </textFill>
+                      <HBox.margin>
+                        <Insets left="70.0" right="30.0" />
+                      </HBox.margin>
+                    </Label>
+                    <ComboBox id="choiceBoxRecipe" fx:id="chBoxPI" prefWidth="100.0" style="-fx-font-size:15;" visible="false">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                  </children>
+                  <VBox.margin>
+                    <Insets top="40.0" />
+                  </VBox.margin>
+                </HBox>
+                <HBox id="HBoxGraphView" fx:id="hBoxGraphView" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: transparent;">
+                  <children>
+                    <SplitPane id="hboxStackPaneGraphView" dividerPositions="0.87" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: transparent;">
+                      <items>
+                        <ScrollPane fx:id="scrollPaneSX" maxWidth="-1.0" minWidth="-1.0" prefHeight="562.0" prefWidth="1400.0" style="-fx-background-color: transparent;">
+                          <content>
+                            <HBox fx:id="hboxStackPaneGraphView" minWidth="-1.0" prefHeight="562.0" prefWidth="-1.0" style="-fx-background-color: transparent;">
+                              <children>
+                                <StackPane fx:id="stackPaneGraph" prefHeight="564.0" prefWidth="1100.0">
+                                  <children>
+                                    <LineChart fx:id="graph" alternativeColumnFillVisible="false" alternativeRowFillVisible="true" createSymbols="false" disable="false" legendSide="RIGHT" legendVisible="false" maxWidth="1081.0" minWidth="1081.0" prefHeight="564.0" prefWidth="1081.0" style="&#10;">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="graphYAxis" label="" side="LEFT" />
+                                      </yAxis>
+                                      <StackPane.margin>
+                                        <Insets right="27.0" />
+                                      </StackPane.margin>
+                                    </LineChart>
+                                    <LineChart fx:id="graph2" alternativeColumnFillVisible="false" alternativeRowFillVisible="true" createSymbols="false" legendVisible="false" maxWidth="1080.0" minHeight="-1.0" minWidth="1080.0" prefHeight="-1.0" prefWidth="1080.0" style="" styleClass="null">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="true" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="YAxis" side="RIGHT" translateX="0.0" />
+                                      </yAxis>
+                                      <StackPane.margin>
+                                        <Insets bottom="36.0" left="30.0" fx:id="x4" />
+                                      </StackPane.margin>
+                                    </LineChart>
+                                    <LineChart fx:id="graph3" alternativeColumnFillVisible="false" alternativeRowFillVisible="true" createSymbols="false" legendVisible="false" maxWidth="1080.0" minWidth="1080.0" prefHeight="-1.0" prefWidth="1080.0" style="" styleClass="null" translateX="0.0" visible="false" StackPane.margin="$x4">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="true" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis id="YAxis" fx:id="chart3YAxis" side="RIGHT" translateX="50.0" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <LineChart fx:id="graph4" alternativeColumnFillVisible="false" alternativeRowFillVisible="true" createSymbols="false" legendVisible="false" maxHeight="476.0" maxWidth="1001.0" minWidth="1005.0" prefHeight="-1.0" prefWidth="1001.0" style="" styleClass="null" translateX="-12.0">
+                                      <xAxis>
+                                        <CategoryAxis animated="true" autoRanging="true" gapStartAndEnd="false" side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" visible="false" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis id="YAxis" fx:id="chart4YAxis" animated="true" autoRanging="true" forceZeroInRange="false" minorTickVisible="false" side="RIGHT" tickLabelsVisible="false" tickMarkVisible="false" translateX="0.0" visible="false" />
+                                      </yAxis>
+                                      <StackPane.margin>
+                                        <Insets bottom="36.0" left="28.0" fx:id="x2" />
+                                      </StackPane.margin>
+                                    </LineChart>
+                                  </children>
+                                </StackPane>
+                              </children>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="scrollPaneDX" fitToWidth="true" maxWidth="350.0" prefHeight="562.0" prefWidth="350.0" style="-fx-background-color: transparent;">
+                          <content>
+                            <VBox fx:id="vBoxParameter" maxWidth="350.0" prefHeight="-1.0" prefWidth="350.0" style="-fx-background-color: transparent;">
+                              <children>
+                                <Label font="$x3" text="Select the dimensions of interest" textFill="$x1" wrapText="true" />
+                                <GridPane fx:id="gridPanelCheckboxMeasureList">
+                                  <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  </rowConstraints>
+                                  <VBox.margin>
+                                    <Insets top="30.0" />
+                                  </VBox.margin>
+                                </GridPane>
+                              </children>
+                              <padding>
+                                <Insets left="30.0" />
+                              </padding>
+                            </VBox>
+                          </content>
+                        </ScrollPane>
+                      </items>
+                    </SplitPane>
+                  </children>
+                  <VBox.margin>
+                    <Insets top="40.0" />
+                  </VBox.margin>
+                </HBox>
+              </children>
+            </VBox>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+  <top>
+    <VBox prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <HBox alignment="TOP_LEFT" disable="false" fillHeight="true" minHeight="44.0" prefHeight="57.0" prefWidth="1014.0">
+          <children>
+            <ImageView fx:id="PirelliLogo" fitHeight="56.99999237060547" fitWidth="217.97320927753074" pickOnBounds="true" preserveRatio="true" smooth="true">
+              <image>
+                <Image url="@GraphicalFiles/PirelliLogo.jpg" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" disable="false" prefHeight="59.0" prefWidth="331.0" style="-fx-padding: 5 5 5 5;" text="Pirelli Analysis System" textAlignment="CENTER" textFill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xffff00ff 0.0%, 0xff7a00ff 50.0%, 0xff0000ff 100.0%)" wrapText="true">
+              <font>
+                <Font name="Arial Narrow Bold" size="30.0" fx:id="x5" />
+              </font>
+              <HBox.margin>
+                <Insets left="50.0" />
+              </HBox.margin>
+            </Label>
+            <Label fx:id="lblMachine" alignment="CENTER" contentDisplay="LEFT" disable="false" font="$x5" prefHeight="59.0" prefWidth="-1.0" style="-fx-padding: 5 5 5 5;" text="" textAlignment="LEFT" textFill="#fff500" wrapText="true" />
+          </children>
+        </HBox>
+        <MenuBar id="menuBar" style="-fx-border-style:solid;&#10;-fx-border-color:gold;&#10;-fx-border-width:3;&#10;-fx-background-color: &#10;        linear-gradient(black 0%, red 90%, gold 100%),&#10;        linear-gradient(from 0% 0% to 100% 100%, rgba(0,0,0,0), red 50%, gold 100%);&#10;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 14px;&#10;&#10;" styleClass="menuBar">
+          <menus>
+            <Menu mnemonicParsing="false" text="File" fx:id="menuFile">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#saveSingleView" styleClass="menuItem" text="Save" fx:id="menuItSave" />
+                <MenuItem mnemonicParsing="false" onAction="#saveAllViews" styleClass="menuItem" text="Save All" fx:id="menuItSaveAll" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#launchNewAnalysis" styleClass="menuItem" text="New Analysis" fx:id="menuItNewAnalysis" />
+                <MenuItem mnemonicParsing="false" onAction="#changeMetersToCut" styleClass="menuItem" text="Change meters to cut (F2)" fx:id="menuItChangeMetersToCut" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#closeWindow" styleClass="menuItem" text="Close" fx:id="menuitClose" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit" fx:id="menuEdit">
+              <items>
+                <Menu mnemonicParsing="false" styleClass="menuItem" text="Title and Labels" fx:id="menuNamesAndLabels">
+                  <items>
+                    <Menu mnemonicParsing="false" text="Chart title">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setGraphTitle" styleClass="menuItem" text="Set chart's title" fx:id="menuItSetGraphTitle" />
+                        <MenuItem mnemonicParsing="false" onAction="#clrChartTitle" text="Clear chart's title" visible="false" fx:id="menuItClrChartTitle" />
+                      </items>
+                    </Menu>
+                  </items>
+                </Menu>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Filter" fx:id="menuFilter">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#filterPerYValues" styleClass="menuItem" text="Filter per Y values" fx:id="menuItFilterY" />
+                <MenuItem id="menuItHideFilters" mnemonicParsing="false" onAction="#hideFilters" styleClass="menuItem" text="Hide Filters" visible="false" fx:id="menuItHideFilters" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Window" fx:id="menuWindow">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#SetFullScreen" styleClass="menuItem" text="Set Full Screen" fx:id="menuItSetFullScreen" />
+                <MenuItem id="menuItExitFromFullScreen" mnemonicParsing="false" onAction="#SetFullScreen" styleClass="menuItem" text="Exit from Full Screen" visible="false" fx:id="menuItExitFromFullScreen" />
+              </items>
+            </Menu>
+          </menus>
+          <stylesheets>
+            <URL value="@style.css" />
+          </stylesheets>
+        </MenuBar>
+      </children>
+    </VBox>
+  </top>
+</BorderPane>

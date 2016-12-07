@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" fx:id="theRoot" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" pickOnBounds="true" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color:#C0C0C0;&#10;&#10;" visible="true" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.ControllerIdleScene">
+  <center>
+    <HBox minHeight="238.0" prefHeight="238.0" prefWidth="600.0">
+      <children>
+        <VBox prefHeight="257.0" prefWidth="600.0">
+          <children>
+            <Label text="Please, wait while data are anlyzed" textFill="RED">
+              <font>
+                <Font name="Arial monospaced for SAP Bold" size="13.0" />
+              </font>
+              <VBox.margin>
+                <Insets bottom="25.0" left="160.0" />
+              </VBox.margin>
+            </Label>
+            <ProgressIndicator fx:id="progressIndicator" disable="false" focusTraversable="false" prefHeight="282.0" prefWidth="297.0" progress="0.0" />
+          </children>
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </VBox>
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="25.0" />
+      </BorderPane.margin>
+    </HBox>
+  </center>
+  <top>
+    <HBox prefHeight="118.0" prefWidth="600.0">
+      <children>
+        <ImageView fx:id="PirelliLogo" fitHeight="73.89098490296647" fitWidth="282.56590270996094" pickOnBounds="true" preserveRatio="true" smooth="true">
+          <image>
+            <Image url="@GraphicalFiles/PirelliLogo.jpg" />
+          </image>
+        </ImageView>
+        <VBox prefHeight="139.0" prefWidth="317.43408203125">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" disable="false" prefHeight="38.0" prefWidth="357.0" text="Pirelli Analysis" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font name="Bank Gothic Medium BT" size="25.0" fx:id="x3" />
+              </font>
+              <textFill>
+                <Color blue="1.000" green="0.160" red="0.000" fx:id="x4" />
+              </textFill>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" font="$x3" prefWidth="357.0" text="System" textFill="$x4" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </top>
+</BorderPane>
