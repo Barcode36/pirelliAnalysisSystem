@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="BorderPane" fx:id="theRoot" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" pickOnBounds="true" prefHeight="-1.0" prefWidth="600.0" style="-fx-background-color:gray;&#10;&#10;" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="gui.Controller">
+  <center>
+    <VBox fx:id="vBoxTot" prefHeight="494.0" prefWidth="545.0">
+      <children>
+        <VBox prefHeight="348.0" prefWidth="545.0">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" text="Please, select the csv file which contains the machine data" textOverrun="CLIP" underline="false">
+              <font>
+                <Font name="Arial monospaced for SAP Bold" size="13.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color blue="0.000" green="0.720" red="1.000" fx:id="x3" />
+              </textFill>
+            </Label>
+            <Label font="$x1" minHeight="14.0001220703125" prefHeight="14.0001220703125" text="of interest:" textFill="$x3" />
+            <HBox disable="false" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="textFileName" alignment="TOP_LEFT" disable="false" editable="false" focusTraversable="false" prefWidth="322.0" promptText="C:\Temp\SemifinishedData.csv" style="-fx-background-color: &#10;        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),&#10;        linear-gradient(#020b02, #3a3a3a),&#10;        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),&#10;        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);&#10;    -fx-background-insets: 0,1,4,5;&#10;    -fx-background-radius: 9,8,5,4;&#10;    -fx-padding: 10 20 10 20;&#10;   &#10;    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="">
+                  <HBox.margin>
+                    <Insets left="45.0" />
+                  </HBox.margin>
+                </TextField>
+                <VBox prefHeight="100.0" prefWidth="145.0">
+                  <children>
+                    <Button fx:id="buttonBrowse" cancelButton="false" defaultButton="true" mnemonicParsing="false" onAction="#openFileSystemBrowsing" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" text="Browse" textFill="RED">
+                      <VBox.margin>
+                        <Insets left="30.0" />
+                      </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" fx:id="x5" />
+                                 </font>
+                    </Button>
+                  </children>
+                </VBox>
+              </children>
+              <padding>
+                <Insets top="30.0" />
+              </padding>
+            </HBox>
+            <Label font="$x1" text="Please, select the csv file which contains SAP data:" textFill="$x3">
+              <VBox.margin>
+                <Insets top="20.0" />
+              </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField id="textFileName" fx:id="textSAP" alignment="TOP_LEFT" disable="false" editable="false" focusTraversable="false" prefWidth="322.0" promptText="C:\Temp\SAP.csv" style="-fx-background-color: &#10;        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),&#10;        linear-gradient(#020b02, #3a3a3a),&#10;        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),&#10;        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);&#10;    -fx-background-insets: 0,1,4,5;&#10;    -fx-background-radius: 9,8,5,4;&#10;    -fx-padding: 10 20 10 20;&#10;   &#10;    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="">
+                  <HBox.margin>
+                    <Insets left="45.0" top="20.0" />
+                  </HBox.margin>
+                </TextField>
+                <Button fx:id="buttonBrowseSAP" mnemonicParsing="false" onAction="#openFileSystemBrowsingSAP" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" text="Browse">
+                  <HBox.margin>
+                    <Insets left="30.0" top="20.0" />
+                  </HBox.margin>
+                </Button>
+              </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="38.0" prefWidth="485.0">
+              <children>
+                <Label font="$x1" text="Meters not considered: ">
+                  <textFill>
+                    <Color blue="0.000" green="0.722" red="1.000" fx:id="x4" />
+                  </textFill>
+                </Label>
+                <TextField fx:id="txtMetersToCut" alignment="TOP_LEFT" prefHeight="32.000099999997474" prefWidth="62.0" style="-fx-background-color: &#10;        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),&#10;        linear-gradient(#020b02, #3a3a3a),&#10;        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),&#10;        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);&#10;    -fx-background-insets: 0,1,4,5;&#10;    -fx-background-radius: 9,8,5,4;&#10;    -fx-padding: 10 20 10 20;&#10;   &#10;    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="10" />
+              </children>
+              <VBox.margin>
+                <Insets right="60.0" top="10.0" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+        <StackPane alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <ImageView fx:id="imgDownArrow" fitHeight="23.554621736928073" fitWidth="26.505910873413086" onMouseEntered="#highlightArrow" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../gui/GraphicalFiles/downArrow.png" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="imgDownArrowHighlight" fitHeight="23.55462646484375" fitWidth="23.55462646484375" onMouseExited="#baseArrow" pickOnBounds="true" preserveRatio="true" visible="false">
+              <image>
+                <Image url="@../gui/GraphicalFiles/downArrowHighlight.png" />
+              </image>
+            </ImageView>
+          </children>
+        </StackPane>
+        <VBox fx:id="vBoxDateAnalysis" prefHeight="-1.0" prefWidth="545.0">
+          <children>
+            <HBox fx:id="hBoxDateAnalysis" alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Label font="$x1" text="Recipes: " textFill="$x4" />
+                <ChoiceBox id="chBoxRecipeListToAnalyze" fx:id="chBoxRecipesListToAnalyze" prefWidth="89.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                  <HBox.margin>
+                    <Insets right="80.0" />
+                  </HBox.margin>
+                </ChoiceBox>
+                <VBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="212.0">
+                  <children>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <Label font="$x1" text="From: " textFill="$x4" />
+                        <ChoiceBox fx:id="chBoxDateFrom" prefWidth="89.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                              <String fx:value="Item 2" />
+                              <String fx:value="Item 3" />
+                            </FXCollections>
+                          </items>
+                          <HBox.margin>
+                            <Insets left="30.0" />
+                          </HBox.margin>
+                        </ChoiceBox>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <Label font="$x1" text="To: " textFill="$x4" />
+                        <ChoiceBox fx:id="chBoxDateTo" prefWidth="89.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                              <String fx:value="Item 2" />
+                              <String fx:value="Item 3" />
+                            </FXCollections>
+                          </items>
+                          <HBox.margin>
+                            <Insets left="45.0" />
+                          </HBox.margin>
+                        </ChoiceBox>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+              <VBox.margin>
+                <Insets right="60.0" top="30.0" />
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+          <Button fx:id="buttonAnalyze" alignment="TOP_RIGHT" cancelButton="false" contentDisplay="RIGHT" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#generateAnalysis" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;" text="Analyze" textFill="RED">
+            <font>
+              <Font name="System Bold" size="13.0" fx:id="x2" />
+            </font>
+          </Button>
+      </children>
+      <BorderPane.margin>
+        <Insets left="55.0" />
+      </BorderPane.margin>
+    </VBox>
+  </center>
+  <top>
+    <HBox prefHeight="118.0" prefWidth="600.0">
+      <children>
+        <ImageView fx:id="PirelliLogo" fitHeight="73.89098490296647" fitWidth="282.56590270996094" pickOnBounds="true" preserveRatio="true" smooth="true">
+          <image>
+            <Image url="@../gui/GraphicalFiles/PirelliLogo.jpg" />
+          </image>
+        </ImageView>
+        <VBox prefHeight="139.0" prefWidth="317.43408203125">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" disable="false" prefHeight="73.8909912109375" prefWidth="318.0" style="-fx-padding: 5 5 5 5;" text="Pirelli Analysis System" textAlignment="CENTER" textFill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xffff00ff 0.0%, 0xff7a00ff 50.0%, 0xff0000ff 100.0%)" wrapText="true">
+              <font>
+                <Font name="Arial Narrow Bold" size="30.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </top>
+   <bottom>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Calender Analytics" textAlignment="CENTER" textFill="#dab708">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField id="textFileName" fx:id="textFileCalender" alignment="TOP_LEFT" disable="false" editable="false" focusTraversable="false" prefWidth="322.0" promptText="C:\Temp\SAP.csv" style="-fx-background-color: &#10;        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),&#10;        linear-gradient(#020b02, #3a3a3a),&#10;        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),&#10;        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);&#10;    -fx-background-insets: 0,1,4,5;&#10;    -fx-background-radius: 9,8,5,4;&#10;    -fx-padding: 10 20 10 20;&#10;   &#10;    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="" />
+                        <Button fx:id="btnBrowseCalender" mnemonicParsing="false" onAction="#doBrowseCalender" prefHeight="40.0" prefWidth="99.0" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" text="Browse" />
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Hour start:" textFill="#ddcc08">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="chBoxOraInizio" prefWidth="89.0">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Item 1" />
+                                       <String fx:value="Item 2" />
+                                       <String fx:value="Item 3" />
+                                    </FXCollections>
+                                 </items>
+                              </ChoiceBox>
+                              <Label text="Hour End:" textFill="#d0c908">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="chBoxOraFine" prefWidth="89.0">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Item 1" />
+                                       <String fx:value="Item 2" />
+                                       <String fx:value="Item 3" />
+                                    </FXCollections>
+                                 </items>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="btnAnalyseCalender" mnemonicParsing="false" onAction="#doAnalyseCalender" style=" -fx-border-color:red;&#10;-fx-border-width:2;&#10;-fx-border-style:solid;&#10;-fx-border-radius:30;&#10;-fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill:red;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 13px;&#10;    -fx-padding: 5 20 5 20;&#10;" text="Analyse" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

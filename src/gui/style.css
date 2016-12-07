@@ -1,0 +1,31 @@
+#menuFile
+{
+    -fx-color: black;
+
+}
+
+#menuEdit
+{
+    -fx-color: black;
+
+}
+
+#menuFilter{
+
+    -fx-color: black;
+
+}
+
+#menuWindow{
+
+    -fx-color: black;
+
+}
+
+.menuItem
+{
+    -fx-color: white;
+
+}
+
+
